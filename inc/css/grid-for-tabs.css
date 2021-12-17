@@ -1,0 +1,59 @@
+h2, p {
+	margin: 0 0 1em 0;
+}
+
+.grid-for-tabs h2 {
+	color: salmon;
+}
+
+.grid-wrapper {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-gap: .5rem;
+}
+
+.grid-wrapper > * {
+	background-color: mintcream;
+	color: maroon;
+	border-radius: .2rem;
+	padding: 1rem;
+	font-size: 150%;
+	/* needed for the floated layout*/
+	margin-bottom: .5rem;
+}
+
+grid.grid-wrapper {
+	position: relative;
+	top: 40%;
+	width: 94%;
+	left: 0.1%;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	justify-content: center;
+	align-content: center;
+}
+
+grid-cell {
+	border: 1px solid #444;
+	color: #444;
+	border-radius: 5px;
+	padding: 20px;
+	font-size: 150%;
+}
+input {
+	background: white;
+}
+.merged {
+	grid-column: 1 / 3;
+	text-align: center;
+	background: white;
+}
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+	.grid-wrapper > * {
+		width: auto;
+		margin: 0;
+	}
+}
